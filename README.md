@@ -1,46 +1,55 @@
-# root@charmine:~ — Personal Portfolio
+# root@charmine:~ — Charmine's Portfolio
 
-A terminal-themed personal portfolio website built from scratch with **HTML5, CSS3 and vanilla JavaScript** — no frameworks or libraries.
+Hi, I'm Charmine Yang, a Cybersecurity & Digital Forensics student at
+Nanyang Polytechnic. I built this portfolio to introduce myself, share the
+projects I have worked on, and document the events and opportunities that have
+shaped my learning journey.
 
-Charmine Yang · Cybersecurity & Digital Forensics student, Nanyang Polytechnic
+The site has a terminal-inspired design because it reflects my interest in
+cybersecurity, computing, and the practical side of technology. It is built
+from scratch with HTML, CSS, and vanilla JavaScript, without a framework or
+build step.
 
----
+## What you'll find here
 
-## Features
+- My education, experience, and current learning journey
+- Projects involving Python, web applications, cybersecurity, and data
+  visualisation
+- Events I attended or contributed to, including workshops, CTFs, and
+  community outreach
+- A responsive interface with project and event details, image galleries, and
+  accessible keyboard interactions
 
-| Feature | How it's built |
-|---|---|
-| Terminal / hacker aesthetic | Monospace headings, `./` command-style labels, CSS custom properties for the colour theme |
-| Typing effect | JS loop that types and deletes words with configurable speeds |
-| Scroll-reveal animations | `IntersectionObserver` adds a class when elements enter the viewport |
-| Scroll-driven timeline | Centre line fills as you scroll (`getBoundingClientRect` + `requestAnimationFrame` throttling); cards alternate left/right on desktop and collapse to a single column on mobile |
-| Tabbed project / event gallery | Accessible tabs (`role="tab"`, `aria-selected`) switching between three CSS Grid layouts with staggered entrance animations |
-| Terminal-window cards | Title-bar "traffic light" dots drawn with layered `radial-gradient`s in a `::before` pseudo-element — no extra markup or images |
-| Hover effects | Image zoom, overlay fade-in, lift and glow |
-| Fully responsive | CSS Grid + Flexbox with breakpoints at 1060px, 860px, 700px, 480px and 340px |
-| Project / event detail pop-up | Native `<dialog>` built from a separate data file (`projects-data.js`): 3-column image gallery with unlimited rows, description below, click-to-enlarge lightbox, closes with ×, Esc or clicking outside, keyboard accessible, focus returns to the card |
-| Missing-image fallback | JS swaps any image that fails to load for a labelled placeholder showing the expected file path |
+## Built with
+
+- Semantic HTML5
+- CSS3 with custom properties, Grid, Flexbox, animations, and responsive
+  breakpoints
+- Vanilla JavaScript (ES6+)
+- Native `<dialog>` for project and event pop-ups
+- `IntersectionObserver` and `requestAnimationFrame` for scroll interactions
 
 ## Project structure
 
-```
-charmine-portfolio/
-├── index.html          # Page structure / content
+```text
+charmine-portfolio-website/
+├── index.html              # Page content and portfolio sections
 ├── css/
-│   └── style.css       # All styling, organised into numbered sections
+│   └── style.css           # Layout, theme, animations, and responsive styles
 ├── js/
-│   ├── projects-data.js  # Pop-up content: images + text for each card
-│   └── main.js           # All interactivity, one function per feature
-├── images/             # Photos, logos, project thumbnails (see images/README.md)
-│   └── details/        # Pop-up gallery images
-├── assets/
-│   └── resume.pdf      # Linked from the nav and "My Resume" button
+│   ├── projects-data.js    # Project and event pop-up content
+│   └── main.js             # Interactions and dynamic behaviour
+├── images/
+│   └── details/            # Images used in project and event galleries
+├── assets/                 # Resume placeholder and other downloadable assets
 └── README.md
 ```
 
-## Editing pop-up content
+## Updating project and event details
 
-Each project/event card opens a pop-up. Its images and text live in `js/projects-data.js`:
+The cards displayed on the site are in `index.html`. Their pop-up content is
+defined in `js/projects-data.js`. Each entry uses the same key as the card's
+`data-id`:
 
 ```js
 'proj-threat-intel-visualisation': {
@@ -48,44 +57,38 @@ Each project/event card opens a pop-up. Its images and text live in `js/projects
   images: [
     'images/details/proj-threat-intel-visualisation-1.jpeg',
     'images/details/proj-threat-intel-visualisation-2.jpeg'
-    // add as many as you like — 3 per row, extra rows are added automatically
   ],
   text: [
-    "First paragraph...",
-    "Second paragraph..."
+    "Add a project description here."
   ]
-},
+}
 ```
 
-## Running locally
+Add gallery images to `images/details/` and list their paths in the matching
+entry. The gallery automatically lays images out in rows of three.
 
-No build step. Either open `index.html` directly in a browser, or serve the folder:
+## Run locally
+
+There is no build step. From the repository directory, run:
 
 ```bash
-# Python
 python -m http.server 8000
-# then visit http://localhost:8000
 ```
 
-Or use the **Live Server** extension in VS Code.
+Then open <http://localhost:8000>. You can also use the Live Server extension
+in VS Code.
 
-## Deploying
+## Deploy
 
-Works on any static host, e.g. **GitHub Pages**: push the folder to a repo, then go to *Settings → Pages* and choose the `main` branch.
+This is a static website and can be deployed to GitHub Pages or any other
+static hosting provider. For GitHub Pages, select the `main` branch under
+**Settings → Pages**.
 
-## Skills demonstrated
-
-- Semantic HTML5 and ARIA attributes for accessibility
-- Modern CSS: custom properties, Grid, Flexbox, pseudo-elements, keyframe animations, transitions, `aspect-ratio`, `mask-image`, media queries
-- Vanilla JavaScript (ES6+): data-driven rendering, native `<dialog>` modal, DOM manipulation, event handling, `IntersectionObserver`, `requestAnimationFrame`, modular feature functions
-- Separation of concerns (structure / presentation / behaviour)
-- Responsive, mobile-first layout testing
-
-## Contact
+## Connect with me
 
 - LinkedIn: [linkedin.com/in/charmine-yang-963b0b335](http://linkedin.com/in/charmine-yang-963b0b335)
 - Email: yangkaijing2408@gmail.com
 
----
+Thanks for visiting my repository and taking a look at my work.
 
 `</>` with ❤️ by Charmine Yang © 2026

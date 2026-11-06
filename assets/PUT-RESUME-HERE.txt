@@ -1,1 +1,0 @@
-Place your resume here as resume.pdf
